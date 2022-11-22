@@ -122,7 +122,27 @@ class Reviewer(Mentor):
 
         res = f'Имя: {self.name}\nФамилия: {self.surname}'
         return res
+# 4 задача
+def student_rating(student_list, course_name):
 
+sum_all = 0
+count_all = 0
+for stud in student_list:
+   if stud.courses_in_progress == [course_name]:
+        sum_all += stud.average_rating
+        count_all += 1
+average_for_all = sum_all / count_all
+return average_for_all
+def lecturer_rating(lecturer_list, course_name):
+
+sum_all = 0
+count_all = 0
+for lect in lecturer_list:
+    if lect.courses_attached == [course_name]:
+        sum_all += lect.average_rating
+        count_all += 1
+average_for_all = sum_all / count_all
+return average_for_all
 # Создаем лекторов и закрепляем их за курсом
 best_lecturer_1 = Lecturer('Ivan', 'Ivanov')
 best_lecturer_1.courses_attached += ['Python']
